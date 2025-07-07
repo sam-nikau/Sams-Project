@@ -1,14 +1,17 @@
 import './App.css'
 import Navbar from './layout/navbar'
 import Button from './components/Button'
-import Contact from './layout/Contact'
+import { Outlet, useNavigate } from 'react-router-dom'
 
 function App() {
+  const navigate = useNavigate()
   return (
     <div>
       <Navbar />
-      <Button label="Contact us" />
-      <Contact />
+      <div className="lg:mx-12">
+        <Outlet />
+      </div>
+      <Button label="Contact us" onClick={() => navigate('/contact')} />
     </div>
   )
 }
