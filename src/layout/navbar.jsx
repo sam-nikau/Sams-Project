@@ -24,10 +24,10 @@ export default function Navbar() {
   return (
     <Disclosure
       as="nav"
-      className="bg-zinc-100 w-full text-zinc-900 shadow-[0_8px_16px_-4px_rgba(0,0,0,0.1)]"
+      className="bg-white w-full text-zinc-900 shadow-[0_8px_16px_-4px_rgba(0,0,0,0.1)]"
     >
       <div className="mx-auto px-2 sm:px-6 lg:px-8">
-        <div className="relative flex h-16 items-center justify-between">
+        <div className="relative flex h-16 lg:h-24 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             {/* Mobile menu button*/}
             <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-orange-600 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset">
@@ -47,7 +47,7 @@ export default function Navbar() {
             <div className="flex shrink-0 items-center">
               <img
                 alt="logo"
-                src="/logoRec.png"
+                src="/logoRecTrans.png"
                 className="h-8 lg:h-16 w-auto"
               />
             </div>
