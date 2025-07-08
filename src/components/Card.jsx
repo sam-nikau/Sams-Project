@@ -2,7 +2,7 @@ import Button from './Button'
 
 export default function Card({ title, text, buttonLabel }) {
   return (
-    <div className="card bg-base-100 w-96 shadow-sm">
+    <div className="card bg-base-100 w-96 shadow-sm hover:shadow-2xl hover:shadow-orange-300">
       <figure>
         <img src="/example.jpg" alt="Shoes" />
       </figure>
