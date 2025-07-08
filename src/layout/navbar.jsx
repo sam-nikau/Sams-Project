@@ -8,12 +8,13 @@ import {
   MenuItems,
 } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useLocation } from 'react-router-dom'
 
 const navigation = [
-  { name: 'Dashboard', href: '/', current: true },
-  { name: 'Team', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Contact us', href: '/contact', current: false },
+  { name: 'Dashboard', href: '/' },
+  { name: 'Team', href: '#' },
+  { name: 'Projects', href: '#' },
+  { name: 'Contact us', href: '/contact' },
 ]
 
 function classNames(...classes) {
@@ -21,6 +22,10 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
+  const location = useLocation()
+  const pathname = location.pathname
+
+  const isActive = (href) => pathname === href
   return (
     <Disclosure
       as="nav"
@@ -58,9 +63,9 @@ export default function Navbar() {
                 <a
                   key={item.name}
                   href={item.href}
-                  aria-current={item.current ? 'page' : undefined}
+                  aria-current={isActive(item.href) ? 'page' : undefined}
                   className={classNames(
-                    item.current
+                    isActive(item.href)
                       ? 'bg-orange-500 text-white'
                       : 'text-slate-800 hover:bg-orange-600 hover:text-white',
                     'rounded-md px-3 py-2 text-sm font-medium'
@@ -82,9 +87,9 @@ export default function Navbar() {
               key={item.name}
               as="a"
               href={item.href}
-              aria-current={item.current ? 'page' : undefined}
+              aria-current={isActive(item.href) ? 'page' : undefined}
               className={classNames(
-                item.current
+                isActive(item.href)
                   ? 'bg-orange-500 text-white'
                   : 'text-slate-800 hover:bg-orange-600 hover:text-white',
                 'block rounded-md px-3 py-2 text-base font-medium'
